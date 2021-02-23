@@ -42,8 +42,14 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
-            'provider' => 'users',
+            'driver' => 'passport',
+            'provider' => 'siswa',
+            'hash' => false,
+        ],
+
+        'siswa' => [
+            'driver' => 'passport',
+            'provider' => 'siswa',
             'hash' => false,
         ],
     ],
@@ -71,10 +77,10 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'siswa' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\CalonSiswa::class,
+        ],
     ],
 
     /*
